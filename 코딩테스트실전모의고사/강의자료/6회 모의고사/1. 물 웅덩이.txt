@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+char board[100][100];
+int main(){
+	ios_base::sync_with_stdio(false);
+	//freopen("input.txt", "rt", stdin);
+	int r, c, cnt=0;
+	cin>>r>>c;
+	for(int i=0; i<r; i++){
+		cin>>board[i];
+	}
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			if(board[i][j]=='#'){
+				cnt++;
+				board[i][j+1]='.';
+				board[i+1][j]='.';
+			}
+		}
+	}
+	cout<<cnt;
+	return 0;
+}

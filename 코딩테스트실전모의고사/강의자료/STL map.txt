@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	//ios_base::sync_with_stdio(false);
+	//freopen("input.txt", "rt", stdin);
+	string a="It is time to Study Go Go";
+	map<char, int> ch1;
+	for(int i=0; i<a.size(); i++){
+		if(a[i]!=' ') ch1[a[i]]+=1;
+	}
+	for(auto it=ch1.begin(); it!=ch1.end(); it++){
+		cout<<it->first<<" "<<it->second<<endl;
+	} 
+	cout<<endl;
+	for(auto x : ch1){
+		cout<<x.first<<" "<<x.second<<endl;
+	}
+	cout<<endl;
+	unordered_map<char, int> ch2;
+	for(int i=0; i<a.size(); i++){
+		if(a[i]!=' ') ch2[a[i]]+=1;
+	}
+	for(auto x : ch2){
+		cout<<x.first<<" "<<x.second<<endl;
+	}
+	cout<<endl;
+	
+	a.push_back(' ');
+	map<string, int> ch3;
+	string tmp;
+	for(int i=0; i<a.size(); i++){
+		if(a[i]==' '){
+			ch3[tmp]++;
+			tmp.clear();
+		}
+		else tmp+=a[i];
+	}
+	
+	for(auto x : ch3){
+		cout<<x.first<<" "<<x.second<<endl;
+	}
+	cout<<endl;
+	return 0;
+}

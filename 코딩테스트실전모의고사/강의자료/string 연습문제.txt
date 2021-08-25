@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	//freopen("input.txt", "rt", stdin);
+	string a="it is time to study", res;
+	//getline(cin, a);
+	int pos, max=INT_MIN;
+	while((pos=a.find(' '))!=string::npos){
+		string tmp=a.substr(0, pos);
+		cout<<tmp<<endl;
+		int len=tmp.size();
+		if(len>max){
+			max=len;
+			res=tmp;
+		}
+		//a.erase(0, pos+1);
+		a=a.substr(pos+1);	
+	}
+	cout<<a<<endl;
+	if(a.size()>max) res=a;
+	cout<<res;	
+	return 0;
+}

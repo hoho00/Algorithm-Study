@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	ios_base::sync_with_stdio(false);
+	//freopen("input.txt", "rt", stdin);
+	int n;
+	char t;
+	cin>>n>>t;
+	t=toupper(t);
+	for(int i=0; i<n; i++){
+		string a;
+		cin>>a;
+		transform(a.begin(), a.end(), a.begin(), ::toupper);
+		if(a.find(t)!=string::npos){
+			string res="";
+			for(int i=0; i<a.size(); i++){
+				if(a.find(a[i])==i) res+=a[i];
+			}
+			cout<<res<<endl;
+		}	
+	}	
+	return 0;
+}

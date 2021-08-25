@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int len, n, res=0, a[21], b[21];
+void DFS(int L, int sum, int cap){	
+	if(sum>len) return;
+	if(L==n){
+		if(sum==len) res=max(res, cap);
+	}
+	else{	
+		DFS(L+1, sum+a[L], min(b[L], cap));	
+		DFS(L+1, sum, cap);
+	}
+}
+int main(){
+	ios_base::sync_with_stdio(false);
+	//freopen("input.txt", "rt", stdin);
+	cin>>len>>n;
+	for(int i=0; i<n; i++){
+		cin>>a[i]>>b[i];
+	}
+	DFS(0, 0, INT_MAX);
+	cout<<res;
+	return 0;
+}
